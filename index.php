@@ -1,42 +1,51 @@
 <?php get_header(); ?>
 
-<div class="container-fluid">	
-	<div class="row">
-		<section id="main-content" class="col-md-9">
-			<ol class="breadcrumb">
-				<li class="active">
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Home', 'ccs' ); ?></a>
-				</li>
-			</ol>
+	<div id="wrapper">
+		<header id="header">
+			<img class="header-bg" src="<?php echo get_stylesheet_directory_uri() . '/image/header_bg.jpg' ?>" alt="Background images"/>
+			<div class="logo container-fluid">
+				<a href="<?php echo home_url(); ?>">
+					<span>Waltzsoft</span>
+				</a>
+			</div>
+		</header>
 
-			<?php
-				$sticky = get_option( 'sticky_posts' );
-				$args = array(
-					
-				);
+		<main id="main">
+			<div class="container">
+				<div class="intro">
+					<p> We working together with private clients & international companies to create great</p>
+					<p class="solutions">
+						Mobile application, Mobile & Server solutions
+					</p>
+				</div>
+			</div>
 
-				global $c_options;
-				$post_number = $c_options[ 'index-number-item' ];
+		</main>
 
-				ccs_the_table_posts( 
-					array(
-						'posts_per_page' => $post_number,
-						'post__in'  => $sticky,
-						'ignore_sticky_posts' => 1,
-					), 
-					esc_html__( 'Hot Posts', 'ccs' ) 
-				);
-
-				get_template_part( 'template-parts/content', 'hometab' ); 
-			?>
-			
-			
-		</section>
-	
-		<section id="right-sidebar" class="col-md-3">
-			 <?php get_sidebar(); ?>
-		</section>
+		<footer id="footer">
+			<div class="container">
+				<div class="line"></div>
+				<div class="row">
+					<div class="col-xs-4">
+						<p>Have a project in mind?</p>
+						<a href="mailto:info@waltzsoft.com">info@waltzsoft.com</a>
+					</div>
+					<div class="col-xs-4">
+						<p>Looking for a job?</p>
+						<a href="mailto:hr@waltzsoft.com">hr@waltzsoft.com</a>
+					</div>
+					<div class="col-xs-4">
+						<p>Follow us on</p>
+						<div class="socials">
+							<a class="facebook" href="#">
+								<i class="fa fa-facebook"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</footer>
 	</div>
-</div><!-- end .container -->
 
 <?php get_footer(); ?>

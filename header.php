@@ -15,9 +15,3 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
-
-	<header id="header">
-		<?php ccs_header(); ?>
-	</header>
-
-	<main class="wrapper">

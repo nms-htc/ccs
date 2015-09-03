@@ -1,5 +1,5 @@
 <?php 
-	function lesson_plugin_activation() {
+	function waltzsoft_plugin_activation() {
 		// Khai bao plugin can cai dat
 		$plugins = array(
 			array(
@@ -11,16 +11,6 @@
 				'name' => 'Auto Post Thumbnail',
 				'slug' => 'auto-post-thumbnail',
 				'required' => false
-			),
-			array(
-				'name' => 'Quick Chat',
-				'slug' => 'quick-chat',
-				'required' => false
-			),
-			array(
-				'name' => 'bbPress',
-				'slug' => 'bbpress',
-				'required' => true
 			),
 			array(
 				'name' => 'TinyMCE Advanced',
@@ -36,22 +26,7 @@
 				'name' => 'WP User Avatar',
 				'slug' => 'wp-user-avatar',
 				'required' => true
-			),
-			array(
-				'name' => 'GD bbPress Attachments',
-				'slug' => 'gd-bbpress-attachments',
-				'required' => false
-			),
-			array(
-				'name' => 'WP Require Login',
-				'slug' => 'wp-require-login',
-				'required' => false
-			),
-			array(
-				'name' => 'Press Permit Core',
-				'slug' => 'press-permit-core',
-				'required' => true
-			),
+			)
 		);	
 		// Thiet lap TGM
 		$configs = array(
@@ -63,5 +38,5 @@
 		);
 		tgmpa( $plugins, $configs );
 	}
-	add_action( 'tgmpa_register', 'lesson_plugin_activation' );
+	add_action( 'tgmpa_register', 'waltzsoft_plugin_activation' );
 ?>

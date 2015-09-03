@@ -1,7 +1,7 @@
 <?php
 	
-	if ( ! function_exists( 'ccs_header')) {
-		function ccs_header() { ?>
+	if ( ! function_exists( 'waltzsoft_header')) {
+		function waltzsoft_header() { ?>
 			<nav class="navbar" role="navigation">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -40,8 +40,8 @@
 							'container_class' => '',
 							'container_id'    => '',
 							'menu_class'      => 'nav navbar-nav navbar-right',
-							'fallback_cb'     => 'ccs_bootstrap_navwalker::fallback',
-							'walker'          => new ccs_bootstrap_navwalker()
+							'fallback_cb'     => 'waltzsubootstrap_navwalker::fallback',
+							'walker'          => new waltzsoft_bootstrap_navwalker()
 						);
 						wp_nav_menu( $nav_menu );
 					 ?>
@@ -50,22 +50,22 @@
 		<?php }
 	}
 
-	if ( ! function_exists( 'ccs_sidebar_nav' )) {
-		function ccs_sidebar_nav() {
+	if ( ! function_exists( 'waltzsoft_sidebar_nav' )) {
+		function waltzsoft_sidebar_nav() {
 			$sidebar_nav = array(
 				'theme_location'  => 'sidebar-menu',
 				'menu'            => 'sidebar-menu',
 				'depth'           => 3,
 				'container'       => 'nav',
 				'container_class' => 'sibar-nav',
-				'container_id'    => 'ccs_sidebar_nav',
+				'container_id'    => 'waltzsoft_sidebar_nav',
 			);
 			wp_nav_menu( $sidebar_nav );
 		}
 	}
 
-	if ( ! function_exists('ccs_thumbnail')) {
-		function ccs_thumbnail($size) {
+	if ( ! function_exists('waltzsoft_thumbnail')) {
+		function waltzsoft_thumbnail($size) {
 			if (! is_single() || has_post_format('image')) :
 				$args = array(
 					'class' => 'img-responsive center-block'
@@ -80,8 +80,8 @@
 		}
 	}
 
-	if ( ! function_exists( 'ccs_entry_title' )) {
-		function ccs_entry_title() {
+	if ( ! function_exists( 'waltzsoft_entry_title' )) {
+		function waltzsoft_entry_title() {
 			if (is_single() || is_page() ) : ?>
 				<h1 class="entry-title">
 					<?php the_title(); ?>
@@ -94,8 +94,8 @@
 		}
 	}
 
-	if (! function_exists('ccs_entry_meta')) {
-		function ccs_entry_meta() {
+	if (! function_exists('waltzsoft_entry_meta')) {
+		function waltzsoft_entry_meta() {
 			if (! is_page()) : ?>
 
 				<div class="row entry-meta">
@@ -121,8 +121,8 @@
 		}
 	}
 
-	if (! function_exists('ccs_entry_content')) {
-		function ccs_entry_content() {
+	if (! function_exists('waltzsoft_entry_content')) {
+		function waltzsoft_entry_content() {
 			if ( ! is_single() && ! is_page()) {
 				the_excerpt();
 			} else {
@@ -189,8 +189,8 @@
 		}
 	}
 
-	if (! function_exists('ccs_entry_tag')) {
-		function ccs_entry_tag() {
+	if (! function_exists('waltzsoft_entry_tag')) {
+		function waltzsoft_entry_tag() {
 			if (has_tag()) {
 				echo '<div class="entry-tag">';
 				printf( __( 'Tagged in: %1$s', 'lesson'), get_the_tag_list( '', '') );
@@ -199,15 +199,15 @@
 		}
 	}
 
-	if (! function_exists('ccs_entry_readmore')) {
-		function ccs_entry_readmore() {
+	if (! function_exists('waltzsoft_entry_readmore')) {
+		function waltzsoft_entry_readmore() {
 			return ' ...';
 		}
 	}
-	add_filter( 'excerpt_more', 'ccs_entry_readmore');
+	add_filter( 'excerpt_more', 'waltzsoft_entry_readmore');
 
-	if ( ! function_exists( 'ccs_custom_breadcrumb' )) {
-		function ccs_custom_breadcrumb() {
+	if ( ! function_exists( 'waltzsoft_custom_breadcrumb' )) {
+		function waltzsoft_custom_breadcrumb() {
 			if(!is_home()) {
 				echo '<ol class="breadcrumb">';
 				echo '<li><a href="'.get_option('home').'">' . __( 'Home', 'ccs' ) . '</a></li>';
@@ -259,8 +259,8 @@
 		}
 	}
 
-	if (!function_exists('ccs_pagination')) {
-		function ccs_pagination() {
+	if (!function_exists('waltzsoft_pagination')) {
+		function waltzsoft_pagination() {
 			// Khong hien thi phan trang neu it hon 2 trang
 			if ($GLOBALS['wp_query'] -> max_num_pages < 2) {
 				return '';
@@ -281,8 +281,8 @@
 	/**
 	 * Render table of post
 	 */
-	if ( ! function_exists( 'ccs_the_table_posts' ) ) {
-		function ccs_the_table_posts( $query_args, $title = 'Table post') {
+	if ( ! function_exists( 'waltzsoft_the_table_posts' ) ) {
+		function waltzsoft_the_table_posts( $query_args, $title = 'Table post') {
 
 			// check if have query of query have posts
 			if ( ! isset( $query_args ) ) {
